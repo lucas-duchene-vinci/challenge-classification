@@ -41,6 +41,25 @@ print(resultats["cm"])
 
 print("\nAccuracy :", resultats["accuracy"])
 
+print(classification_report(
+    y_test,
+    y_pred,
+    labels=[0, 1, 2],
+    target_names=["Adélie", "Papou", "Jugulaire"],
+    zero_division=0
+))
+
+ConfusionMatrixDisplay.from_predictions(
+    y_test,
+    y_pred,
+    labels=[0, 1, 2],
+    display_labels=["Adélie", "Papou", "Jugulaire"],
+    values_format="d"
+)
+
+plt.title("Matrice de confusion - Ridge")
+plt.show()
+
 noms = ["Adélie", "Papou", "Jugulaire"]
 
 for i, nom in enumerate(noms):

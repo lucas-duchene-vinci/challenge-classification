@@ -32,7 +32,7 @@ plt.xlabel("Espèce")
 plt.ylabel("Nombre de manchots")
 plt.title("Répartition des espèces")
 plt.xticks([0, 1, 2], ["Adélie", "Papou", "Jugulaire"])
-
+plt.savefig("graphiques/repartition_especes.png", dpi=300, bbox_inches="tight")
 
 
 plt.figure()
@@ -44,7 +44,7 @@ plt.xlabel("Poids (g)")
 plt.ylabel("Nombre de manchots")
 plt.title("Distribution du poids selon l'espèce")
 plt.legend()
-
+plt.savefig("graphiques/distribution_poids.png", dpi=300, bbox_inches="tight")
 
 # Graphique : longueur des nageoires selon l'espèce
 plt.figure()
@@ -63,7 +63,7 @@ plt.xlabel("Longueur des nageoires (mm)")
 plt.ylabel("Nombre de manchots")
 plt.title("Distribution de la longueur des nageoires selon l'espèce")
 plt.legend()
-
+plt.savefig("graphiques/longueur_nageoires.png", dpi=300, bbox_inches="tight")
 plt.figure()
 for s, name in [(0, "Adélie"), (1, "Papou"), (2, "Jugulaire")]:
     rows = cleaned_data[cleaned_data[:, 0] == s]
@@ -73,23 +73,12 @@ plt.xlabel("Longueur du bec (mm)")
 plt.ylabel("Épaisseur du bec (mm)")
 plt.title("Longueur et épaisseur du bec selon l'espèce")
 plt.legend()
-
+plt.savefig("graphiques/dimensions_bec.png", dpi=300, bbox_inches="tight")
 
 plt.show()
+plt.savefig(".")
 
 
 """
-Mes observations:
-Adélie : 32 mm< longueur de bec < 45 mm et 14 < épaisseur du bec < 22 mm
-Papou:  39 < longueur du bec < 56 et 12 < épaisseur du bec < 18
-Jugulaire:  42mm<longueur du bec< 58 et 15 <epaisseur<22
 
-Poids (g) y a une superposition pour les 3 entre 3700 g et 4500g
-Papou: entre 4200 g  et6200g
-Adélie: enytre 2800 g et 4500g
-Jugulaire : entre 2680 et < 4600g
-
-Adélie : 170 mm < nageoire < 210
-Jugulaire: 170 < n < 215
-Papou : 200 < n < 235
 """
