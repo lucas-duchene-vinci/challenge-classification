@@ -77,6 +77,6 @@ if __name__ == "__main__":
 
     noms = ["Adélie", "Papou", "Jugulaire"]
 
-    manual_classifier()
-    decision_tree()
+    #manual_classifier()
+    #decision_tree()
     ridge_classifier()
