@@ -1,0 +1,52 @@
+
+import numpy as np
+from matplotlib import pyplot as plt
+
+from dataset import load_data, clean_data, split_data
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import StandardScaler
+from sklearn.linear_model import RidgeClassifier
+from sklearn.metrics import accuracy_score, ConfusionMatrixDisplay, classification_report
+
+data = load_data("datasets/manchots.csv")
+
+data = clean_data(data)
+
+X_train, X_test, y_train, y_test = split_data(
+    data,
+    test_size=0.2,
+    seed=42
+)
+
+
+model = make_pipeline(
+    StandardScaler(),
+    RidgeClassifier(alpha=1.0)
+)
+
+model.fit(X_train, y_train)
+
+y_pred = model.predict(X_test)
+
+
+accuracy = accuracy_score(y_test, y_pred)
+print("Accuracy :", accuracy)
+
+print(classification_report(
+    y_test,
+    y_pred,
+    labels=[0, 1, 2],
+    target_names=["Adélie", "Papou", "Jugulaire"],
+    zero_division=0
+))
+
+ConfusionMatrixDisplay.from_predictions(
+    y_test,
+    y_pred,
+    labels=[0, 1, 2],
+    display_labels=["Adélie", "Papou", "Jugulaire"],
+    values_format="d"
+)
+
+plt.title("Matrice de confusion - Ridge")
+plt.show()
