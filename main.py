@@ -52,6 +52,7 @@ def manual_classifier():
         dump(clf, f, protocol=5)
 
 def print_data(res):
+    noms = ["Adélie", "Papou", "Jugulaire"]
     print(res["cm"])
     print("\nAccuracy :", res["accuracy"])
     for i, nom in enumerate(noms):
@@ -74,8 +75,6 @@ if __name__ == "__main__":
         test_size=0.2,
         seed=42
     )
-
-    noms = ["Adélie", "Papou", "Jugulaire"]
 
     #manual_classifier()
     #decision_tree()

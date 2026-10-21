@@ -1,0 +1,25 @@
+[[22  0  0]
+ [ 0 14  0]
+ [ 1  0 11]]
+
+Accuracy : 0.9791666666666666
+
+--- Adélie ---
+Précision : 0.9565217391304348
+Rappel : 1.0
+Spécificité : 0.9615384615384616
+F1-score : 0.9777777777777777
+
+--- Papou ---
+Précision : 1.0
+Rappel : 1.0
+Spécificité : 1.0
+F1-score : 1.0
+
+--- Jugulaire ---
+Précision : 1.0
+Rappel : 0.9166666666666666
+Spécificité : 1.0
+F1-score : 0.9565217391304348
+
+Process finished with exit code 0
