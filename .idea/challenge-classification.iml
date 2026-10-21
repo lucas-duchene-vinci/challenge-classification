@@ -4,7 +4,11 @@
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/.venv" />
     </content>
-    <orderEntry type="jdk" jdkName="C:\VINCI\3BIN1\ML\challenge-classification\.venv" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="~\3bin\ML\Semaine 6\Projet\challenge-classification\.venv" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
+  <component name="PackageRequirementsSettings" />
+  <component name="PyDocumentationSettings" />
+  <component name="ReSTService" />
+  <component name="TestRunnerService" />
 </module>
