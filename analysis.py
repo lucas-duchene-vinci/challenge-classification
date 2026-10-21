@@ -78,7 +78,7 @@ plt.legend()
 plt.show()
 
 
-
+"""
 Mes observations:
 Adélie : 32 mm< longueur de bec < 45 mm et 14 < épaisseur du bec < 22 mm
 Papou:  39 < longueur du bec < 56 et 12 < épaisseur du bec < 18
@@ -92,3 +92,4 @@ Jugulaire : entre 2680 et < 4600g
 Adélie : 170 mm < nageoire < 210
 Jugulaire: 170 < n < 215
 Papou : 200 < n < 235
+"""

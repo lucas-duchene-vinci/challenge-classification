@@ -8,6 +8,8 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import RidgeClassifier
 from sklearn.metrics import accuracy_score, ConfusionMatrixDisplay, classification_report
 
+from metrics import report
+
 data = load_data("datasets/manchots.csv")
 
 data = clean_data(data)
@@ -32,21 +34,18 @@ y_pred = model.predict(X_test)
 accuracy = accuracy_score(y_test, y_pred)
 print("Accuracy :", accuracy)
 
-print(classification_report(
-    y_test,
-    y_pred,
-    labels=[0, 1, 2],
-    target_names=["Adélie", "Papou", "Jugulaire"],
-    zero_division=0
-))
+resultats = report(y_test, y_pred)
 
-ConfusionMatrixDisplay.from_predictions(
-    y_test,
-    y_pred,
-    labels=[0, 1, 2],
-    display_labels=["Adélie", "Papou", "Jugulaire"],
-    values_format="d"
-)
+print("Matrice de confusion :")
+print(resultats["cm"])
 
-plt.title("Matrice de confusion - Ridge")
-plt.show()
+print("\nAccuracy :", resultats["accuracy"])
+
+noms = ["Adélie", "Papou", "Jugulaire"]
+
+for i, nom in enumerate(noms):
+    print(f"\n--- {nom} ---")
+    print("Précision :", resultats["precision"][i])
+    print("Rappel :", resultats["recall"][i])
+    print("Spécificité :", resultats["specificity"][i])
+    print("F1-score :", resultats["f1_score"][i])
